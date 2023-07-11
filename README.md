@@ -11,4 +11,4 @@ We were further interested in comparing the performance of mT5 finetuned for GEC
 ## Citations
 
 [1] mT5. (n.d.). https://github.com/google-research/multilingual-t5 \
-[2] Multilingual GEC Dataset. (n.d.). https://huggingface.co/datasets/juancavallotti/multilingual- gec.
+[2] Multilingual GEC Dataset. (n.d.). https://huggingface.co/datasets/juancavallotti/multilingual-gec.
