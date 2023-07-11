@@ -1,0 +1,43 @@
+version: "3.1"
+
+stories:
+
+- story: Language Tutoring Conversation
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: vocab_qa
+  - action: action_answer_question
+  - intent: conversation_practice
+  - action: utter_simulate_conversation
+  - intent: french
+  - action: action_generate_response
+  - intent: goodbye
+  - action: utter_goodbye
+
+# - story: happy path
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_great
+#   - action: utter_happy
+
+# - story: sad path 1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: affirm
+#   - action: utter_happy
+
+# - story: sad path 2
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_goodbye
