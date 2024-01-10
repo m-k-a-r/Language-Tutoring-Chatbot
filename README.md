@@ -6,7 +6,9 @@ We intend to produce an agent that is useful to second-language learners of Fren
 ## Grammar Error Correction
 
 We use a grammar error correction (GEC) model to integrate into the RASA framework. To do so, we finetune a pre-trained LM model, in our case, the mT5[1], on the Multilingual GEC dataset[2]. \
-We were further interested in comparing the performance of mT5 finetuned for GEC against GPT-3 zero-shot evaluated on this task. We use the gpt-3.5-turbo model from OpenAI in conjunction with the LangChain API to prompt GPT-3. After analyzing the performance of both approaches, the better of the two will be what we use in the backend of our RASA chatbot.
+We were further interested in comparing the performance of mT5 finetuned for GEC against GPT-3 zero-shot evaluated on this task. We use the gpt-3.5-turbo model from OpenAI in conjunction with the LangChain API to zero-shot and few-shot prompt GPT-3.5. After analyzing the performance of both approaches, we found that the finetuned mT5 model outperformed the prompted GPT model, even when using few-shot prompting. With this in mind, we use mT5 in the backend of our RASA chatbot as the GEC model. 
+
+See the **Chatbot_Project_Report.pdf** file in this repo for the complete write-up of this project -- including motivation, design, experimentation, and results.
 
 ## Citations
 
