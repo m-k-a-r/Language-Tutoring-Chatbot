@@ -7,8 +7,9 @@ See the **Chatbot_Project_Report.pdf** file in this repo for the complete write-
 
 ## Grammar Error Correction
 
-We use a grammar error correction (GEC) model to integrate into the RASA framework. To do so, we finetune a pre-trained LM model, in our case, the mT5[1], on the Multilingual GEC dataset[2]. \
-We were further interested in comparing the performance of mT5 finetuned for GEC against GPT-3 zero-shot evaluated on this task. We use the gpt-3.5-turbo model from OpenAI in conjunction with the LangChain API to zero-shot and few-shot prompt GPT-3.5. After analyzing the performance of both approaches, we found that the finetuned mT5 model outperformed the prompted GPT model, even when using few-shot prompting. With this in mind, we use mT5 in the backend of our RASA chatbot as the GEC model. 
+We use a grammar error correction (GEC) model to integrate into the RASA framework. To do so, we finetune a pre-trained LM model, in our case, the mT5[1], on the Multilingual GEC dataset[2]. 
+
+We were further interested in comparing the performance of mT5 finetuned for GEC against GPT-3.5 zero-shot evaluated on this task. We use the gpt-3.5-turbo model from OpenAI in conjunction with the LangChain API to zero-shot and few-shot prompt GPT. After analyzing the performance of both approaches, we found that the finetuned mT5 model slightly outperformed the prompted GPT model, even when using few-shot prompting. However, error analysis revealed that while mT5 outperforms based on the Multilingual GEC dataset, it is a much weaker language model than GPT-3.5 and consistently fails to capture the broader linguistic context of a sentence, producing confusing outputs for difficult inputs as a result. With this in mind, we use few-shot prompting on GPT-3.5 in the backend of our RASA chatbot. 
 
 ## Citations
 
